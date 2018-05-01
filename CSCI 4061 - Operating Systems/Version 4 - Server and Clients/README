@@ -1,0 +1,34 @@
+/*login: elafa009
+  date: 04/29/2018
+  name: Jacob Elafandi, Joshua Pratt
+  id: 4457156, 4975616
+  Extra credits: Yes
+*/
+
+-x500's-
+Jacob Elafandi: elafa009
+Joshua Pratt: pratt288
+
+-LECTURE SECTIONS-
+Both of us are in section 1 (the 8:15 class).
+
+-EXTRA CREDIT?-
+Yes, we are doing the extra credit.
+
+-PURPOSE-
+This program determines the winner of an election by counting and tabulating votes from several regions, whose relationship to each other is defined in an input file.
+
+-HOW TO COMPILE-
+Type "make" in the terminal in the same directory as the Makefile and the source files (dag.h, votelist.h, output.h, client.c, and server.c). This will create the executables "client" and "server".
+
+-HOW TO USE FROM SHELL-
+Change the current directory to the directory which contains the client and server.
+To run the server, type "./server <DAG_FILE> <Server_Port>", replacing <DAG_FILE> with the path to the file in question, and <Server_Port> with some high integer of your choice which the client and server will use to connect.
+To run the client, type "./client <REC_FILE> <Server_IP> <Server_Port>", replacing <REC_FILE> with the path to the file in question, <Server_IP> with the IP address of the machine the server is running on (or 127.0.0.1 if running on the same machine), and <Server_Port> with the same number used when initiating the server.
+The client will end on its own, but the server must be terminated by interrupting with Ctrl-C.
+
+-DESCRIPTION-
+The server creates a directed acyclic graph of nodes, with each node representing a region and its children representing its subregions. Clients send commands to the server to open regions for voting, close regions from voting, add votes, remove votes, count current votes, or return the overall winner. The server handles clients in parallel and executes each command, returning the result of the command to the client which sent it.
+
+-INDIVIDUAL CONTRIBUTIONS-
+We worked on the design together for all files. I (Jacob) did the coding for the server and DAG, and Josh did the coding for the client and votelist. We both made small changes to each other's work, and I did most of the documentation.

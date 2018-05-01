@@ -1,0 +1,28 @@
+/* login: elafa009
+ * date: 02/19/17
+ * name: Jacob_Elafandi, Joshua_Pratt
+ * id: 4457156, 4975616 */
+
+-PURPOSE-
+This program determines the winner of an election by counting and tabulating votes from several regions, whose relationship to each other is defined in an input file.
+
+-HOW TO COMPILE-
+Type "make" in the terminal in the same directory as the Makefile and the source files (votecounter.c and makeargv.h). This will create the program "votecounter".
+
+-HOW TO USE FROM SHELL-
+Copy "votecounter" to the folder with the input files (if it's not there already) and change the current directory to that folder.
+Type "./votecounter input.txt" into the terminal.
+This should run the program on the input file. The output will be called "Output_Who_Won".
+
+-DESCRIPTION-
+This program creates a directed acyclic graph of nodes, with each node representing a region and its children representing its subregions. (If there is a cycle or multiple inheritance, the program will detect this and abort.)
+On each region without subregions (i.e. leaf of the tree), it calls the "leafcounter" program, which counts up and records the number of votes received by each candidate.
+On every other region except the largest (i.e. branch of the tree), it calls the "aggregate_votes" program, which takes the files outputted by that region's children and sums the number of votes received by each candidate.
+On the largest region (i.e. root of the tree), it calls the "find_winner" program, which is like "aggregate_votes" but also includes a line in the output which declares the overall winner.
+
+-x500's-
+Jacob Elafandi: elafa009
+Joshua Pratt: pratt288
+
+-INDIVIDUAL CONTRIBUTIONS-
+Joshua and I (Jacob) worked on the design together. He wrote some preliminary code to read lines from the input file. I expanded this code to full functionality and wrote the functions to parse input lines and execute nodes. Joshua identified and fixed a critical error that was causing the output to be written improperly. I then wrote the code that checked for loops or multiple inheritance, the code that deallocated memory upon program exit, and this readme file.

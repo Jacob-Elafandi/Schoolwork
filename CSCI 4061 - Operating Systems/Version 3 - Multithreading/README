@@ -1,0 +1,33 @@
+/*login: elafa009
+  date: 07/10/18
+  name: Jacob Elafandi, Joshua Pratt
+  id: 4457156, 4975616
+  Extra credits: Yes
+*/
+
+-x500's-
+Jacob Elafandi: elafa009
+Joshua Pratt: pratt288
+
+-LECTURE SECTIONS-
+Both of us are in section 1 (the 8:15 class).
+
+-EXTRA CREDIT?-
+Yes, we are doing the extra credit.
+
+-PURPOSE-
+This program determines the winner of an election by counting and tabulating votes from several regions, whose relationship to each other is defined in an input file.
+
+-HOW TO COMPILE-
+Type "make" in the terminal in the same directory as the Makefile and the source files (util.h, pqueue.h. votelist.h. dag.h, and votecounter.c). This will create the program "votecounter".
+
+-HOW TO USE FROM SHELL-
+Change the current directory to the directory which contains votecounter.
+Type "./votecounter <DAG.txt> <input_dir> <output_dir>" into the terminal, replacing the <bracketed> fields with the paths to the file/directory in question. Optionally, include an integer argument at the end which specifies the maximum number of child threads.
+
+-DESCRIPTION-
+This program creates a directed acyclic graph of nodes, with each node representing a region and its children representing its subregions. It reads the names of leaf files into a priority queue. The program then launches a number of child threads (4, if not defined by user) to continually pop leaves from this queue and act on them until all are accounted for.
+When acting on a leaf node, each thread decrypts the leaf file and writes it to the output directory, while counting the number of votes each candidate received. It then travels upward through the graph, aggregating all ancestor region vote totals by the vote totals found in the leaf node. The file from the root node also includes a line specifying the winner of the election (assuming no ties). Mutexes are used to ensure this is all done in a threadsafe manner.
+
+-INDIVIDUAL CONTRIBUTIONS-
+We worked on the design together for all five files. I (Jacob) did most of the direct coding, and Joshua did most of the documentation (though we each fixed issues in the other's contributions).

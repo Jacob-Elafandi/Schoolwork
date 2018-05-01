@@ -1,0 +1,32 @@
+/* login: elafa009
+ * date: 03/07/17
+ * name: Jacob_Elafandi, Joshua_Pratt
+ * id: 4457156, 4975616 */
+
+-PURPOSE-
+This program determines the winner of an election by counting and tabulating votes from several regions, whose relationship to each other is defined by a set of nested directories.
+
+-HOW TO COMPILE-
+Type "make" in the terminal in the same directory as the Makefile and the source files (Leaf_Counter.c, Aggregate_Votes.c, Vote_Counter.c, and makeargv.h). This will create the programs Leaf_Counter, Aggregate_Votes, and Vote_Counter.
+
+-HOW TO USE FROM SHELL-
+Type "./Vote_Counter <path>" into the terminal. The output file will be stored at the directory <path> references and have the same name as that directory.
+
+-DESCRIPTION-
+This program treats the file system as a directed acyclic graph, with each directory representing a region and its children representing its subregions.
+The Leaf_Counter program uses a linked list of candidate names and vote totals to total up the votes in a leaf of the tree, i.e. a directory without subdirectories.
+The Aggregate_Votes program calls Leaf_Counter if it's called on a leaf. Otherwise, it calls Aggregate_Votes recursively on all of its subdirectories, then uses a similar linked list to total up their votes.
+The Vote_Counter program calls Aggregate_Votes on the root of the tree to sum up all the votes. It then appends a line to the output file declaring who won the election. Vote_Counter also checks if any symbolic links exist which cause the graph to have a cycle (although these links won't be followed when totaling votes).
+
+-x500's-
+Jacob Elafandi: elafa009
+Joshua Pratt: pratt288
+
+-LECTURE SECTIONS-
+Both of us are in section 1 (the 8:15 class).
+
+-INDIVIDUAL CONTRIBUTIONS-
+Joshua and I (Jacob) worked on the design together, then agreed to split the duties: he would write Leaf_Counter and I would write Aggregate_Votes and Vote_Counter. We followed this plan. I also made some edits to his Leaf_Counter and completed the extra credit in Vote_Counter.
+
+-EXTRA CREDIT?-
+Yes, we are doing the extra credit.

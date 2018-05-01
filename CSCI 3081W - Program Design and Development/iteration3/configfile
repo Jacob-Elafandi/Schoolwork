@@ -1,0 +1,28 @@
+# Arena Size: x_dim, y_dim
+arena_size 1024 768
+
+# Home Base: radius, pos.x, pos.y, color.r, color.g, color.b,
+#            collision_delta, heading_angle, speed, heading_change_odds
+home_base 20 410 200 255 0 0 1 130 6 2
+
+# Player: radius, pos.x, pos.y, color.r, color.g, color.b,
+#         collision_delta, heading_angle, speed, max_speed,
+#         battery_max_charge, angle_delta, speed_delta, max_frozen_timer
+player 20 500 500 0 0 255 1 120 3 5 100 10 1 50
+
+# Recharge Station: radius, pos.x, pos.y, color.r, color.g, color.b
+recharge_station 20 500 300 0 128 128
+
+# Robot: radius, pos.x, pos.y, color.r, color.g, color.b, super_color.r,
+#        super_color.g, super_color.b, collision_delta, heading_angle, speed,
+#        proximity_range, proximity_field, distress_range, entity_type_range
+robot 30 400 100 255 165 0 107 63 160 1 90 5 200 10 200 200
+robot 30 750 600 255 165 0 107 63 160 1 315 5 200 10 200 200
+robot 40 600 200 255 165 0 107 63 160 1 215 5 100 30 200 200
+
+# Obstacle: radius, pos.x, pos.y, color.r, color.g, color.b
+obstacle 30 200 200 255 255 255
+obstacle 15 150 600 255 255 255
+obstacle 45 600 500 255 255 255
+obstacle 30 400 700 255 255 255
+obstacle 60 800 300 255 255 255
